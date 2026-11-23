@@ -12,7 +12,9 @@
 <link rel="stylesheet" href="parts/td-filter/part.css">
 <link rel="stylesheet" href="parts/horizon-modes/part.css">
 <link rel="stylesheet" href="parts/lightring-paper/part.css">
+<link rel="stylesheet" href="parts/evidence/part.css">
 <link rel="stylesheet" href="parts/closing/part.css">
+<link rel="stylesheet" href="parts/rd-analysis/part.css">
 </head>
 <body>
 <div class="deck">
@@ -193,8 +195,8 @@
   <div class="horizon-modes-qbox" data-step="3">
     <div class="horizon-modes-q">Will the <span class="horizon-modes-fu" data-step="4">filtered/unfiltered </span>waveform <i>approach</i> an $\omega_H^{(n)}$ at intermediate times? Which $\omega_H^{(n)}$?</div>
     <div class="horizon-modes-a" data-step="5">
-      <div>Filtered: <span class="cite">Oshita+ (2509.09165)</span>, <span class="cite">Lu+ (2510.01001)</span>, <span class="cite">Kankani+ (2603.15474)</span>, <span class="cite">Kankani+ (2607.02380)</span>, <span class="cite">Han+ (2607.08570)</span>, <span class="cite">Sun+ (2608.23209)</span>, <span class="cite">Weller+ (2609.09531)</span></div>
-      <div>Unfiltered: <span class="cite">Chung+ (2606.06592)</span>, <span class="cite">Dyer+ (2606.25021)</span></div>
+      <div>Filtered: <span class="cite">Oshita+ (2509.09165)</span>, <span class="cite">Lu+ (2510.01001)</span>, <span class="cite">Kankani+ (2603.15474)</span>, <span class="cite">Kankani+ (2607.02380)</span>, <span class="cite">Han+ (2607.08570)</span>, <span class="cite">Sun+ (2608.23209)</span>, <span class="cite">Weller+ (2609.09531)</span>, <span class="cite">Nakamoto+ (2609.11908)</span>, <span class="cite">Dyer+ (2610.25176)</span>, <span class="cite">Shi+ (2610.30031)</span>, <span class="cite">Laeuger+ (2611.03632)</span></div>
+      <div>Unfiltered: <span class="cite">Chung+ (2606.06592)</span>, <span class="cite">Dyer+ (2606.25021)</span>, <span class="cite">Kuntz (2611.05472)</span>, <span class="cite">Abedi+ (2611.26591)</span></div>
     </div>
   </div>
   <div class="horizon-modes-qbox horizon-modes-qkey" data-step="6">
@@ -237,6 +239,22 @@
        style="left:760px; top:557.77px; width:1120px" data-step="1">
   <span class="cite lightring-paper-own"><u>Cheung</u> (2608.29466)</span>
 </section>
+<!-- part: evidence -->
+<section class="slide" id="evidence-dyer">
+  <h1 class="title">More evidence</h1>
+  <img class="evidence-fig" src="parts/evidence/assets/dyer_lightring_freq.png" alt=""
+       style="left:60px; top:150px; height:800px">
+  <img class="evidence-fig" src="parts/evidence/assets/dyer_bh_vs_ucos.png" alt=""
+       style="left:780px; top:190px; width:1100px">
+  <span class="cite evidence-cite" style="left:780px; top:920px; width:1100px">Dyer+ (2610.25176)</span>
+</section>
+
+<section class="slide" id="evidence-hdi">
+  <h1 class="title">Probing within the light ring</h1>
+  <img class="evidence-fig" src="parts/evidence/assets/albuquerque_potential_hdi.png" alt=""
+       style="left:375px; top:150px; width:1170px">
+  <span class="cite evidence-cite" style="left:375px; top:940px; width:1170px">Albuquerque+ (2608.01061)</span>
+</section>
 <!-- part: closing -->
 <section class="slide" id="closing-statements">
   <h1 class="title">Summary</h1>
@@ -254,6 +272,42 @@
     <span class="cite"><u>Cheung</u> (2608.29466)</span>
   </div>
 </section>
+<!-- part: rd-analysis -->
+<script src="parts/rd-analysis/assets/rd-analysis-fit.js"></script>
+<script src="parts/rd-analysis/assets/rd-analysis-real-n2.js"></script>
+<script src="parts/rd-analysis/assets/rd-analysis-nr3617-n4.js"></script>
+<script src="parts/rd-analysis/assets/rd-analysis-nr4018-n3.js"></script>
+<section class="slide" id="rd-analysis-title">
+  <div class="rd-analysis-bigtitle">Preliminary results on ringdown data analysis</div>
+</section>
+
+<section class="slide" id="rd-analysis-fit">
+  <div class="ongoing">ongoing work</div>
+  <div class="rd-analysis-model">$$h(t) = \sum_n A_n\, e^{-i\omega_n t}$$</div>
+  <svg class="rd-analysis-fitplot" width="1920" height="1080" viewBox="0 0 1920 1080"></svg>
+  <div class="rd-analysis-xlab rd-analysis-fitxlab">$t - t_{\rm peak}$ [ms]</div>
+</section>
+
+<section class="slide" id="rd-analysis-real">
+  <h1 class="title">GW250114 real data</h1>
+  <div class="ongoing">ongoing work</div>
+  <svg class="rd-analysis-anim" width="1920" height="1080" viewBox="0 0 1920 1080"></svg>
+  <div class="rd-analysis-labs"></div>
+</section>
+
+<section class="slide" id="rd-analysis-aligned">
+  <h1 class="title">GW250114-like 3G injection: aligned spin</h1>
+  <div class="ongoing">ongoing work</div>
+  <svg class="rd-analysis-anim" width="1920" height="1080" viewBox="0 0 1920 1080"></svg>
+  <div class="rd-analysis-labs"></div>
+</section>
+
+<section class="slide" id="rd-analysis-precessing">
+  <h1 class="title">GW250114-like 3G injection: precessing</h1>
+  <div class="ongoing">ongoing work</div>
+  <svg class="rd-analysis-anim" width="1920" height="1080" viewBox="0 0 1920 1080"></svg>
+  <div class="rd-analysis-labs"></div>
+</section>
 <div class="deck-progress"><div class="deck-progress-track"><div class="deck-progress-fill"></div></div><div class="deck-progress-knob"></div></div>
 <div class="deck-clock"></div>
 </div>
@@ -264,6 +318,7 @@
 <script src="parts/horizon-modes/part.js"></script>
 <script src="parts/lightring-paper/part.js"></script>
 <script src="parts/closing/part.js"></script>
+<script src="parts/rd-analysis/part.js"></script>
 <script>Deck.start();</script>
 </body>
 </html>

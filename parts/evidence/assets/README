@@ -1,0 +1,4 @@
+dyer_lightring_freq.png: Dyer+ (2610.25176) Fig. 1, left panel (figures/1_mass_ratio_trend_22.pdf of the arXiv source, 300 dpi).
+dyer_bh_vs_ucos.png: Dyer+ (2610.25176) Fig. 6, top two rows (Schwarzschild BH; S08A06 boson star with light rings, no horizon) of figures/trajectories_and_waveforms.pdf, 300 dpi, cropped at y = 2124 px.
+albuquerque_potential_hdi.png: Albuquerque+ (2608.01061) Fig. 2 (case3_potential_hdi_cov_inset_5x_prior_br.png of the arXiv source), unchanged.
+Sources: ../../../../lit_cache/arxiv-2610.25176-src, arxiv-2608.01061-src.

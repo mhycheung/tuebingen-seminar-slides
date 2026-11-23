@@ -1,0 +1,56 @@
+.rd-analysis-bigtitle {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 160px;
+  right: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 72px;
+  font-weight: bold;
+}
+
+.rd-analysis-model {
+  position: absolute;
+  top: 70px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 56px;
+}
+
+.rd-analysis-fitplot,
+.rd-analysis-anim {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.rd-analysis-xlab {
+  position: absolute;
+  font-size: 40px;
+  white-space: nowrap;
+}
+
+.rd-analysis-fitxlab {
+  left: 0;
+  right: 0;
+  top: 990px;
+  text-align: center;
+}
+
+.rd-analysis-labs {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1920px;
+  height: 1080px;
+  pointer-events: none;
+}
+
+.rd-analysis-lab {
+  position: absolute;
+  white-space: nowrap;
+}
