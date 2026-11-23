@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="icon" href="data:,">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>horizon-modes</title>
+<link rel="stylesheet" href="vendor/katex/katex.min.css">
+<link rel="stylesheet" href="common/deck.css">
+<link rel="stylesheet" href="parts/horizon-modes/part.css">
+</head>
+<body>
+<div class="deck">
+<!-- part: horizon-modes -->
+<script src="parts/horizon-modes/assets/horizon-modes-traj.js"></script>
+<section class="slide" id="horizon-modes-main">
+  <h1 class="title">Horizon modes</h1>
+  <canvas class="horizon-modes-canvas" style="left:40px; top:160px; width:860px; height:860px"></canvas>
+
+  <div class="horizon-modes-right">
+    <div class="horizon-modes-eq">
+      <div class="horizon-modes-sum">
+        <span>$G(r_p)\,S(r_p) \sim e^{-im\Omega_H u}\,$</span><span class="horizon-modes-br">$\Big[$</span><span class="horizon-modes-term" data-n="1">$\color{#ee4266}c_1\epsilon$</span><span class="horizon-modes-term" data-n="2">${}+{}\color{#ff8c00}c_2\epsilon^2$</span><span class="horizon-modes-term" data-n="3">${}+{}\color{#2a9d8f}c_3\epsilon^3$</span><span class="horizon-modes-term" data-n="4">${}+{}\color{#3a86ff}c_4\epsilon^4$</span><span class="horizon-modes-term" data-n="5">${}+{}\color{#8338ec}c_5\epsilon^5$</span><span class="horizon-modes-term" data-n="6">${}+{}\cdots$</span><span class="horizon-modes-br">$\Big]$</span>
+      </div>
+      <div class="horizon-modes-def">$\epsilon \equiv r_p(u) - r_+ \propto e^{-\kappa u}$</div>
+    </div>
+    <svg class="horizon-modes-plane" width="1920" height="1080" viewBox="0 0 1920 1080"></svg>
+    <div class="horizon-modes-labs"></div>
+    <span class="cite horizon-modes-cite">Mino+ (0809.2814)</span>
+  </div>
+</section>
+
+<section class="slide" id="horizon-modes-screened">
+  <h1 class="title">Horizon modes are screened</h1>
+  <div class="horizon-modes-tiles">
+    <div class="horizon-modes-tile" data-step="1" data-tile="0">
+      <div class="horizon-modes-filt">Kerr, unfiltered</div>
+      <span class="cite">Zimmerman+ (1106.0782)</span>
+      <div class="horizon-modes-teq horizon-modes-zc">$$\psi_4\sim\int\! d\omega\,e^{-i\omega u}\left[\frac{\tilde Z_1}{\omega-\omega_H^{(1)}}+\frac{\tilde Z_2}{\omega-\omega_H^{(2)}}+\cdots\right]$$$$\tilde Z_1\propto(\omega-\omega_H^{(1)})(\omega-\omega_H^{(2)})$$$$\tilde Z_2(\omega_H^{(2)})\mathrel{\overset{?}{\neq}}0$$</div>
+      <svg class="horizon-modes-tplot" width="300" height="290" viewBox="0 0 300 290"></svg>
+    </div>
+    <div class="horizon-modes-tile" data-step="2" data-tile="1">
+      <div class="horizon-modes-filt">Kerr, filtered(?)</div>
+      <span class="cite">Oshita+ (2509.09165)</span>
+      <div class="horizon-modes-teq">$$\psi_4\sim\hat D(\omega_G)\,e^{-i\int^u\omega_G\,du'}$$$$\hat D(\omega)=\frac{(\omega-\omega_H^{(1)})(\omega-\omega_H^{(2)})}{2i\omega B^{\rm in}(\omega)}$$</div>
+      <svg class="horizon-modes-tplot" width="300" height="290" viewBox="0 0 300 290"></svg>
+    </div>
+    <div class="horizon-modes-tile" data-step="3" data-tile="2">
+      <div class="horizon-modes-filt">Schwarzschild, unfiltered</div>
+      <span class="cite">Kuntz+ (2606.07173)</span>
+      <div class="horizon-modes-pen" data-pen="past"></div>
+      <svg class="horizon-modes-tplot" width="300" height="290" viewBox="0 0 300 290"></svg>
+    </div>
+    <div class="horizon-modes-tile" data-step="4" data-tile="3">
+      <div class="horizon-modes-filt">Schwarzschild, filtered</div>
+      <span class="cite">Ma+ (2607.06677)</span>
+      <div class="horizon-modes-pen" data-pen="future"></div>
+      <svg class="horizon-modes-tplot" width="300" height="290" viewBox="0 0 300 290"></svg>
+    </div>
+    <div class="horizon-modes-tile" data-step="5" data-tile="4">
+      <div class="horizon-modes-filt">Kerr, filtered</div>
+      <span class="cite">Sun+ (2608.23209)</span>
+      <span class="cite horizon-modes-weller">Weller+ (2609.09531)</span>
+      <div class="horizon-modes-teq horizon-modes-sunq">$$\psi_4\sim\left[\omega_G(u)-\omega_H^{(1)}\right]e^{-i\int^u\omega_G\,du'}$$$$\omega_G(u)-\omega_H^{(1)}\propto e^{-\kappa u}$$</div>
+      <div class="horizon-modes-sunline horizon-modes-sun1">$\omega_{\rm DW}(u)\to\omega_H^{(2)}$</div>
+      <div class="horizon-modes-sunline horizon-modes-sun2">$\omega_{\rm DW}(u)\to\omega_H^{(3)}$</div>
+      <svg class="horizon-modes-tplot" width="300" height="290" viewBox="0 0 300 290"></svg>
+    </div>
+    <div class="horizon-modes-tile" data-step="6" data-tile="5">
+      <div class="horizon-modes-filt">Kerr, unfiltered</div>
+      <span class="cite">Kubota+ (2609.07326)</span>
+      <div class="horizon-modes-teq">$$h\sim\int\! d\omega\,e^{-i\omega u}\,\Pi(\omega)\!\int\! dt'\,e^{iP(\omega,t')}$$$$\Pi\propto\frac{(\omega-\omega_H^{(1)})(\omega-\omega_H^{(2)})}{B^{\rm inc}(\omega)}$$</div>
+      <svg class="horizon-modes-tplot" width="300" height="290" viewBox="0 0 300 290"></svg>
+    </div>
+  </div>
+  <div class="horizon-modes-also">See also: <span class="cite">De Amicis+ (2506.21668)</span>, <span class="cite">Rosato+ (2603.20490)</span>, <span class="cite">Giataganas+ (2609.27920)</span></div>
+</section>
+
+<section class="slide" id="horizon-modes-questions">
+  <h1 class="title">Three questions</h1>
+  <div class="horizon-modes-qbox" data-step="1">
+    <div class="horizon-modes-q">Will we see horizon modes at late times?</div>
+    <div class="horizon-modes-a" data-step="2">No, they are screened.</div>
+  </div>
+  <div class="horizon-modes-qbox" data-step="3">
+    <div class="horizon-modes-q">Will the <span class="horizon-modes-fu" data-step="4">filtered/unfiltered </span>waveform <i>approach</i> an $\omega_H^{(n)}$ at intermediate times? Which $\omega_H^{(n)}$?</div>
+    <div class="horizon-modes-a" data-step="5">
+      <div>Filtered: <span class="cite">Oshita+ (2509.09165)</span>, <span class="cite">Lu+ (2510.01001)</span>, <span class="cite">Kankani+ (2603.15474)</span>, <span class="cite">Kankani+ (2607.02380)</span>, <span class="cite">Han+ (2607.08570)</span>, <span class="cite">Sun+ (2608.23209)</span>, <span class="cite">Weller+ (2609.09531)</span></div>
+      <div>Unfiltered: <span class="cite">Chung+ (2606.06592)</span>, <span class="cite">Dyer+ (2606.25021)</span></div>
+    </div>
+  </div>
+  <div class="horizon-modes-qbox horizon-modes-qkey" data-step="6">
+    <div class="horizon-modes-q">Is most of the filtered waveform sourced near the horizon?</div>
+    <div class="horizon-modes-a" data-step="7">No. <span class="cite"><u>Cheung</u> (2608.29466) accepted by PRD</span></div>
+  </div>
+</section>
+</div>
+<script src="vendor/katex/katex.min.js"></script>
+<script src="vendor/katex/auto-render.min.js"></script>
+<script src="common/deck.js"></script>
+<script src="parts/horizon-modes/part.js"></script>
+<script>Deck.start();</script>
+</body>
+</html>

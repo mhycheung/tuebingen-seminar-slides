@@ -1,0 +1,188 @@
+/* slide title of the first two plot slides: larger than the deck's h1.title, set high to leave room above the equation */
+.td-filter-title {
+  position: absolute;
+  top: 6px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 72px;
+}
+
+.td-filter-eq {
+  position: absolute;
+  top: 146px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 50px;
+}
+
+.td-filter-eq .katex-display { margin: 0; }
+
+.td-filter-plot {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.td-filter-label {
+  position: absolute;
+  left: 860px;
+  width: 360px;
+  text-align: left;
+  font-size: 52px;
+  font-weight: bold;
+}
+
+.td-filter-label-top { top: 269px; }
+.td-filter-label-bot { top: 659px; }
+
+.td-filter-alabel {
+  position: absolute;
+  font-size: 40px;
+  white-space: nowrap;
+  transform: translate(-100%, -50%);
+  padding: 0 4px;
+  background: #fff;
+  visibility: hidden;
+}
+
+.td-filter-tlabel {
+  position: absolute;
+  top: 574px;
+  font-size: 40px;
+  white-space: nowrap;
+}
+
+.bg-filter-lufit {
+  position: absolute;
+  top: 150px;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+
+.bg-filter-lufit img {
+  display: block;
+  height: 800px;
+  margin: 0 auto 4px;
+}
+
+.td-filter-axes > span {
+  position: absolute;
+  white-space: nowrap;
+}
+
+.td-filter-tick { font-size: 34px; }
+.td-filter-axlabel { font-size: 42px; }
+
+.td-filter-deriv {
+  position: absolute;
+  top: 30px;
+  bottom: 120px;
+  left: 140px;
+  right: 100px;
+  display: grid;
+  grid-template-columns: 400px 1fr;
+  column-gap: 40px;
+  align-content: space-evenly;
+  align-items: center;
+  font-size: 44px;
+}
+
+.td-filter-deriv .katex-display {
+  display: inline-block;
+  text-align: left;
+  margin: 0;
+}
+
+.td-filter-dlabel {
+  font-size: 40px;
+  font-weight: bold;
+  text-align: right;
+}
+
+.td-filter-ov {
+  position: absolute;
+  top: 30px;
+  bottom: 120px;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  text-align: center;
+  font-size: 50px;
+}
+
+/* td-filter-overlap: the same equation twice, stacked; the copy with the red brace replaces the
+   one with a transparent brace at step 1 (widget in part.js), so nothing moves */
+.td-filter-ovstack { position: relative; }
+.td-filter-ov1 { position: absolute; top: 0; left: 0; right: 0; }
+
+.td-filter-unit {
+  position: absolute;
+  top: 684px;
+  left: 1126px;
+  width: 470px;
+  text-align: center;
+  font-size: 34px;
+  background: #fff;
+}
+
+.td-filter-unit .katex-display { margin: 0; }
+
+/* td-filter-flip: the end state of td-filter-n17, scaled down, above the bullets */
+.td-filter-mini {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1920px;
+  height: 1080px;
+  transform-origin: 0 0;
+  transform: translate(204px, -143px) scale(0.7);
+}
+
+.td-filter-points {
+  position: absolute;
+  top: 620px;
+  left: 200px;
+  right: 200px;
+  margin: 0;
+  padding-left: 40px;
+  font-size: 44px;
+  line-height: 1.3;
+}
+
+.td-filter-points li { margin-bottom: 30px; }
+
+/* source line at the bottom of the two derivation slides */
+.td-filter-see {
+  position: absolute;
+  top: 985px;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+
+/* td-filter-plunge, last step: one line in the gap between the panels */
+.td-filter-nonqnm {
+  position: absolute;
+  top: 574px;
+  left: 1042px;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  font-size: 40px;
+  color: #d62728;
+}
+
+/* td-filter-plunge, last step: the "direct wave" label on the filtered panel, placed by part.js */
+.td-filter-dwlabel {
+  position: absolute;
+  font-size: 36px;
+  white-space: nowrap;
+  color: #e67e00;
+  font-weight: bold;
+  line-height: 1;
+  visibility: hidden;
+}

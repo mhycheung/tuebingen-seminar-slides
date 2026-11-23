@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="icon" href="data:,">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>bg-filter</title>
+<link rel="stylesheet" href="vendor/katex/katex.min.css">
+<link rel="stylesheet" href="common/deck.css">
+<link rel="stylesheet" href="parts/bg-filter/part.css">
+</head>
+<body>
+<div class="deck">
+<!-- part: bg-filter -->
+<section class="slide" id="bg-filter-ma">
+  <h1 class="title">The rational filter</h1>
+  <div class="bg-filter-eq">
+    $$\mathcal{F}(\omega) = \prod_{lmn} \frac{\omega - \omega_{lmn}}{\omega - \omega_{lmn}^{*}}$$
+  </div>
+  <div class="bg-filter-fig">
+    <img src="parts/bg-filter/assets/ma_rwz_filter_upper_right.svg" alt="Ma+ (2207.10870), Fig. 3, upper right panel: Zerilli waveform before and after the rational filter, -100 &lt; t &lt; 300">
+    <span class="cite">Ma+ (2207.10870)</span>
+  </div>
+</section>
+
+<section class="slide" id="bg-filter-dw">
+  <h1 class="title">Direct waves</h1>
+  <figure class="bg-filter-dwfig" style="left:40px">
+    <img src="parts/bg-filter/assets/oshita_fig3_top_bottom.png" alt="Oshita+ (2509.09165), Fig. 3, top and bottom panels">
+    <span class="cite">Oshita+ (2509.09165)</span>
+  </figure>
+  <figure class="bg-filter-dwfig" style="left:1000px">
+    <img src="parts/bg-filter/assets/lu_fig1_sketch.png" alt="Lu+ (2510.01001), Fig. 1">
+    <span class="cite">Lu+ (2510.01001)</span>
+  </figure>
+</section>
+<section class="slide" id="bg-filter-gw250114">
+  <h1 class="title">GW250114</h1>
+  <div class="bg-filter-lufit">
+    <img src="parts/bg-filter/assets/lu_fig2_whitened_strain.svg" alt="Lu+ (2510.01001), Fig. 2: whitened GW250114 strain, original, with QNMs removed, and with the direct wave removed">
+    <span class="cite">Lu+ (2510.01001)</span>
+  </div>
+</section>
+</div>
+<script src="vendor/katex/katex.min.js"></script>
+<script src="vendor/katex/auto-render.min.js"></script>
+<script src="common/deck.js"></script>
+
+<script>Deck.start();</script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+ma_rwz_filter_upper.svg: upper panels of Fig. 3 (file RWZ.pdf) of S. Ma et al., "Quasinormal-mode filters: a new
+approach to analyze the gravitational-wave ringdown of binary black-hole mergers",
+arXiv:2207.10870 (v2 source), converted with `pdftocairo -svg RWZ.pdf`, then cropped to the upper panels by setting
+the SVG viewBox to 0 0 561.553125 258 (pt); the drawing is otherwise unmodified.
+ma_rwz_filter_upper_right.svg (used on the slide): made from ma_rwz_filter_upper.svg by hand-editing the SVG
+(2026-10-08). It shows only the upper right panel (-100 < t < 300); the y tick labels of the left
+panel and the t tick labels and t axis label of the lower panel are added by <use> copies of the
+same drawing, shifted and clipped. No curve is changed.
+Upper panels: Re h22 (black) and Re h22 filtered by F_220 (red) for a Schwarzschild BH
+perturbed by a Gaussian pulse.
+
+Copied unchanged from the direct-wave slide part of the seminar_SBU talk:
+- oshita_fig3_top_bottom.png: Oshita+ (2509.09165) Fig. 3 (source file EMRI_0.8.pdf), rendered
+  at 300 dpi; top and bottom panels only (the middle panel, the decay rate, is removed).
+- lu_fig1_sketch.png: Lu+ (2510.01001) Fig. 1 (source file figs/horizon.png), unchanged.
+
+- lu_fig2_whitened_strain.svg: Lu+ (2510.01001) Fig. 2 (source file figs/NRSur_whitened_strain.pdf),
+  converted with `pdftocairo -svg`, unmodified. Whitened LIGO Hanford strain of GW250114 (gray)
+  and the maximum-a-posteriori NRSur7dq4 reconstruction (red): (a) original, (b) with the
+  (l=m=2, n=0,1,2) QNMs removed, (c) with the QNMs and the direct wave removed.

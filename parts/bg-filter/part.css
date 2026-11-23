@@ -1,0 +1,50 @@
+.bg-filter-eq {
+  position: absolute;
+  top: 105px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 52px;
+}
+
+.bg-filter-fig {
+  position: absolute;
+  top: 365px;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+
+.bg-filter-fig img {
+  display: block;
+  height: 620px;
+  margin: 0 auto 4px;
+}
+
+.bg-filter-dwfig {
+  position: absolute;
+  top: 160px;
+  width: 880px;
+  margin: 0;
+  text-align: center;
+}
+
+.bg-filter-dwfig img {
+  display: block;
+  height: 800px;
+  margin: 0 auto;
+}
+
+.bg-filter-lufit {
+  position: absolute;
+  top: 130px;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+
+.bg-filter-lufit img {
+  display: block;
+  height: 840px;
+  margin: 0 auto;
+}

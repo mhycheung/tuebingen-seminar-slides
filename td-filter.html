@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="icon" href="data:,">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>td-filter</title>
+<link rel="stylesheet" href="vendor/katex/katex.min.css">
+<link rel="stylesheet" href="common/deck.css">
+<link rel="stylesheet" href="parts/td-filter/part.css">
+</head>
+<body>
+<div class="deck">
+<!-- part: td-filter -->
+<script src="parts/td-filter/assets/plunge.js"></script>
+<section class="slide" id="td-filter-deriv">
+  <div class="td-filter-deriv">
+    <div class="td-filter-dlabel">frequency domain</div>
+    <div>$$\tilde{\Psi}(\omega) \xrightarrow{\text{filter}} \frac{\omega - \omega_{\ell mn}}{\omega - \omega_{\ell mn}^*}\,\tilde{\Psi}(\omega)$$</div>
+    <div></div>
+    <div data-step="1">$$\phantom{\tilde{\Psi}(\omega) \xrightarrow{\text{filter}}} = \left[1 - \frac{\omega_{\ell mn} - \omega_{\ell mn}^*}{\omega - \omega_{\ell mn}^*}\right]\tilde{\Psi}(\omega)$$</div>
+    <div class="td-filter-dlabel" data-step="2">time domain</div>
+    <div data-step="2">$$\Psi(t) \xrightarrow{\text{filter}} \Psi(t) - \frac{\displaystyle\int_0^\infty e^{i\omega_{\ell mn}^*\tau}\,\Psi(t+\tau)\,d\tau}{\displaystyle\int_0^\infty e^{i\omega_{\ell mn}^*\tau}\,e^{-i\omega_{\ell mn}\tau}\,d\tau}$$</div>
+  </div>
+  <div class="td-filter-see"><span class="cite">See the appendix of <u>Cheung</u> (2608.29466)</span></div>
+</section>
+
+<section class="slide" id="td-filter-overlap">
+  <div class="td-filter-ov">
+    <div class="td-filter-ovstack">
+      <div class="td-filter-ov0">$$\Psi(t) \xrightarrow{\text{filter}} \Psi(t) - {\color{transparent}\underbrace{\color{black}\frac{\displaystyle\int_0^\infty e^{i\omega_{\ell mn}^*\tau}\,\Psi(t+\tau)\,d\tau}{\displaystyle\int_0^\infty e^{i\omega_{\ell mn}^*\tau}\,e^{-i\omega_{\ell mn}\tau}\,d\tau}}_{\text{least squares QNM fit}}}$$</div>
+      <div class="td-filter-ov1">$$\Psi(t) \xrightarrow{\text{filter}} \Psi(t) - {\color{#d62728}\underbrace{\color{black}\frac{\displaystyle\int_0^\infty e^{i\omega_{\ell mn}^*\tau}\,\Psi(t+\tau)\,d\tau}{\displaystyle\int_0^\infty e^{i\omega_{\ell mn}^*\tau}\,e^{-i\omega_{\ell mn}\tau}\,d\tau}}_{\text{least squares QNM fit}}}$$</div>
+    </div>
+    <div data-step="2">$$= \Psi(t) - \textcolor{#d62728}{A_{\rm fit}(t)}$$</div>
+  </div>
+  <div class="td-filter-see"><span class="cite">See the appendix of <u>Cheung</u> (2608.29466)</span></div>
+</section>
+
+<section class="slide" id="td-filter-n17">
+  <div class="td-filter-title">$\omega = \omega_{\ell mn}$</div>
+  <div class="td-filter-eq">
+    $$\Psi(t) \xrightarrow{\text{filter}} \textcolor{#1f4e9c}{\Psi(t)} - \textcolor{#d62728}{A_{\rm fit}(t)}$$
+  </div>
+  <svg class="td-filter-plot" data-clip="td-filter-n17-clip-" width="1920" height="1080" viewBox="0 0 1920 1080"></svg>
+  <div class="td-filter-axes"></div>
+  <div class="td-filter-label td-filter-label-top">original</div>
+  <div class="td-filter-label td-filter-label-bot">filtered</div>
+  <div class="td-filter-tlabel"></div>
+  <div class="td-filter-alabel"></div>
+  <div class="td-filter-unit" data-step="19">$$|\mathcal{F}(\omega)| = \left|\frac{\omega - \omega_{220}}{\omega - \omega_{220}^*}\right| = 1$$</div>
+</section>
+
+<section class="slide" id="td-filter-diff">
+  <div class="td-filter-title">$\omega \neq \omega_{\ell mn}$</div>
+  <div class="td-filter-eq">
+    $$\Psi(t) \xrightarrow{\text{filter}} \textcolor{#1f4e9c}{\Psi(t)} - \textcolor{#d62728}{A_{\rm fit}(t)}$$
+  </div>
+  <svg class="td-filter-plot" data-clip="td-filter-diff-clip-" width="1920" height="1080" viewBox="0 0 1920 1080"></svg>
+  <div class="td-filter-axes"></div>
+  <div class="td-filter-label td-filter-label-top">original</div>
+  <div class="td-filter-label td-filter-label-bot">filtered</div>
+  <div class="td-filter-tlabel"></div>
+  <div class="td-filter-alabel"></div>
+</section>
+
+<section class="slide" id="td-filter-flip">
+  <div class="td-filter-mini">
+    <svg class="td-filter-plot" data-clip="td-filter-flip-clip-" width="1920" height="1080" viewBox="0 0 1920 1080"></svg>
+    <div class="td-filter-axes"></div>
+    <div class="td-filter-label td-filter-label-top">original</div>
+    <div class="td-filter-label td-filter-label-bot">filtered</div>
+    <div class="td-filter-tlabel"></div>
+  <div class="td-filter-alabel"></div>
+  </div>
+  <ul class="td-filter-points">
+    <li data-step="1">The filter redistributes power in time, $|\mathcal{F}(\omega)| = 1$.</li>
+    <li data-step="2">If the waveform is a clean QNM after time $t_0$, the filter removes it cleanly and deposits the power to earlier times $t < t_0$.</li>
+    <li data-step="3">The filter rescales the amplitude of other QNMs.</li>
+  </ul>
+</section>
+
+<section class="slide" id="td-filter-plunge">
+  <div class="td-filter-title">point particle plunge</div>
+  <div class="td-filter-eq">
+    $$\Psi(t) \xrightarrow{\text{filter}} \textcolor{#1f4e9c}{\Psi(t)} - \textcolor{#d62728}{A_{\rm fit}(t)}$$
+  </div>
+  <svg class="td-filter-plot" data-clip="td-filter-plunge-clip-" width="1920" height="1080" viewBox="0 0 1920 1080"></svg>
+  <div class="td-filter-axes"></div>
+  <div class="td-filter-label td-filter-label-top">original</div>
+  <div class="td-filter-label td-filter-label-bot">filtered</div>
+  <div class="td-filter-tlabel"></div>
+  <div class="td-filter-alabel"></div>
+  <div class="td-filter-nonqnm" data-step="12">filtering non-QNM waveforms $\rightarrow$ nontrivial redistribution of power</div>
+  <div class="td-filter-dwlabel">direct wave</div>
+</section>
+</div>
+<script src="vendor/katex/katex.min.js"></script>
+<script src="vendor/katex/auto-render.min.js"></script>
+<script src="common/deck.js"></script>
+<script src="parts/td-filter/part.js"></script>
+<script>Deck.start();</script>
+</body>
+</html>
