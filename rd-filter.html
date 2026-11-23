@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="icon" href="data:,">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>rd-filter</title>
+<link rel="stylesheet" href="vendor/katex/katex.min.css">
+<link rel="stylesheet" href="common/deck.css">
+<link rel="stylesheet" href="parts/rd-filter/part.css">
+</head>
+<body>
+<div class="deck">
+<!-- part: rd-filter -->
+<script src="parts/rd-filter/assets/rd-filter-title-data.js"></script>
+<script src="parts/rd-filter/assets/rd-filter-fit-data.js"></script>
+<script src="parts/rd-filter/assets/rd-filter-data.js"></script>
+<section class="slide" id="rd-filter-ringdown">
+  <h1 class="title">What is the ringdown made of?</h1>
+  <canvas id="rd-filter-title-wave" class="rd-filter-title-wave"></canvas>
+  <div class="rd-filter-cite"><span class="cite">Berti, ..., <u>Cheung</u>+ (2505.23895)</span></div>
+</section>
+
+<section class="slide" id="rd-filter-sweep2">
+  <h1 class="title">Fitting quasinormal modes</h1>
+  <div class="rd-filter-nr">NR simulations</div>
+  <canvas id="rd-filter-sweep2-left" class="rd-filter-canvas rd-filter-left" style="left:150px; top:210px; width:880px; height:720px"></canvas>
+  <canvas id="rd-filter-sweep2-right" class="rd-filter-canvas rd-filter-right" style="left:1150px; top:210px; width:720px; height:720px"></canvas>
+  <div class="rd-filter-label" style="left:590px; top:985px">$t / M_f$</div>
+  <div class="rd-filter-label rd-filter-ylabel" style="left:150px; top:570px">$\mathrm{Re}\, h_{22}$</div>
+  <div class="rd-filter-label" style="left:1510px; top:985px">$M_f\, \omega_r$</div>
+  <div class="rd-filter-label rd-filter-ylabel" style="left:1100px; top:570px">$-M_f\, \omega_i$</div>
+  <div class="rd-filter-t0"></div>
+  <div class="rd-filter-q rd-filter-q220">$\omega_{220}$</div>
+  <div class="rd-filter-q rd-filter-q221">$\omega_{221}$</div>
+  <div class="rd-filter-cite"><span class="cite">Baibhav, <u>Cheung</u>+ (2302.03050)</span>&nbsp;&nbsp;&nbsp;<span class="cite"><u>Cheung</u>+ (2310.04489)</span></div>
+</section>
+
+<section class="slide" id="rd-filter-demo">
+  <h1 class="title">The rational filter</h1>
+  <div class="rd-filter-nr">NR simulations</div>
+  <div class="rd-filter-eq"></div>
+  <canvas id="rd-filter-demo-plot" class="rd-filter-canvas" style="left:150px; top:300px; width:1680px; height:660px"></canvas>
+  <div class="rd-filter-label" style="left:1005px; top:1010px">$t / M_f$</div>
+  <div class="rd-filter-label rd-filter-ylabel" style="left:120px; top:605px">$\lvert\mathrm{Re}\, h_{22}\rvert$</div>
+  <div class="rd-filter-q rd-filter-fitlabel"></div>
+</section>
+</div>
+<script src="vendor/katex/katex.min.js"></script>
+<script src="vendor/katex/auto-render.min.js"></script>
+<script src="common/deck.js"></script>
+<script src="parts/rd-filter/part.js"></script>
+<script>Deck.start();</script>
+</body>
+</html>

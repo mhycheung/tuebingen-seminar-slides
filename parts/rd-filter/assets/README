@@ -1,0 +1,14 @@
+rd-filter-title-data.js  Re h22 of SXS:BBH:0305 (Boyle et al. 2019, arXiv:1904.04831), from two
+                         cycles before the peak of |h22| to 60 M_f after it. Copied from the
+                         seminar_SBU project (slides/parts/ringdown/assets/ringdown-title-data.js,
+                         made by its tasks/t04-ringdown/make_title_wave.py); variable renamed
+                         RINGDOWN_TITLE -> RDFILTER_TITLE.
+rd-filter-fit-data.js    SXS:BBH:0305 h22 and its one- and two-free-QNM fits over start times
+                         (jaxqualin, Cheung et al. 2023, arXiv:2310.04489). Copied from the
+                         seminar_SBU project (slides/parts/qnm-fit/assets/qnm-fit-data.js, made
+                         by its tasks/t05-qnm-fit/make_qnm_fit_data.py); variable renamed
+                         QNMFIT_DATA -> RDFILTER_FIT.
+rd-filter-data.js        Re h22 of SXS:BBH:0305 and Re of the waveform after the rational filter
+                         for 220, 220 + 221, 220 + 221 + 222 (Kerr frequencies of the remnant),
+                         with fixed-frequency 221 and 222 fits. Made by src/make_rd_filter_data.py;
+                         output in make_rd_filter_data_2026-11-23.log.

@@ -1,0 +1,45 @@
+/* rd-filter-ringdown: copied from the seminar_SBU ringdown part (ringdown-title). */
+.rd-filter-title-wave { position: absolute; left: 120px; top: 250px; width: 1680px; height: 680px; }
+
+/* rd-filter-sweep2 and rd-filter-demo: copied from the seminar_SBU qnm-fit part. */
+.rd-filter-canvas { position: absolute; }
+.rd-filter-label {
+  position: absolute;
+  font-size: 40px;
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+}
+.rd-filter-ylabel { transform: translate(-50%, -50%) rotate(-90deg); }
+.rd-filter-t0 {
+  position: absolute;
+  left: 590px;
+  top: 165px;
+  transform: translate(-50%, -50%);
+  font-size: 44px;
+  white-space: nowrap;
+}
+.rd-filter-q { position: absolute; font-size: 36px; white-space: nowrap; }
+
+/* Credits (R11), bottom right. */
+.rd-filter-cite { position: absolute; right: 60px; bottom: 15px; white-space: nowrap; }
+
+/* "NR simulations" label, gold, top left. */
+.rd-filter-nr {
+  position: absolute;
+  top: 30px;
+  left: 50px;
+  color: #c9a000;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+/* Filter equation, below the title. */
+.rd-filter-eq {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 130px;
+  text-align: center;
+  font-size: 40px;
+}
+.rd-filter-fitlabel { color: #d62728; font-size: 40px; }
