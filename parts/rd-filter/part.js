@@ -296,19 +296,9 @@
     });
   }
 
-  // t0 at which mode 1 of the two-mode fit is closest to the Kerr (2,2,1) frequency.
-  function closestTo221() {
-    var best = Infinity, kb = 0;
-    for (var i = 0; i < D.k.length; i++) {
-      var d = Math.hypot(D.fit2.wr[i][1] - D.w221[0], D.fit2.wi[i][1] - D.w221[1]);
-      if (d < best) { best = d; kb = D.k[i]; }
-    }
-    return kb;
-  }
-
-  // Two modes; the sweep pauses where mode 1 is closest to (2,2,1).
+  // Two modes; the sweep runs from t0 = 4 to 50 M_f without a pause.
   sweep({
-    id: "rd-filter-sweep2", fit: D.fit2, pauses: [closestTo221()],
+    id: "rd-filter-sweep2", fit: D.fit2,
     plane: { x: [0.38, 0.64], y: [0.04, 0.36], xt: range(0.4, 0.6, 0.05), yt: range(0.05, 0.35, 0.05) },
     markers: [{ w: D.w220, label: "220", from: 0 }, { w: D.w221, label: "221", from: 0 }]
   });
@@ -374,7 +364,7 @@
         // label at the envelope |A| e^{w_i t} where it crosses 10^-3.5
         var amp = Math.hypot(A[0], A[1]), tl = (-3.5 - Math.log10(amp)) / (w[1] / Math.LN10);
         var cv = slide.querySelector("#rd-filter-demo-plot");
-        katex.render("\\omega_{" + F.n + "}\\ \\text{fit}", lab);
+        katex.render("\\omega_{" + F.n + "}", lab);
         lab.style.left = (parseFloat(cv.style.left) + f.X(tl) + 20) + "px";
         lab.style.top = (parseFloat(cv.style.top) + f.Y(-3.5) - 60) + "px";
       }

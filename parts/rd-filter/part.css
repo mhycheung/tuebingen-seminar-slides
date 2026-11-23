@@ -23,16 +23,6 @@
 /* Credits (R11), bottom right. */
 .rd-filter-cite { position: absolute; right: 60px; bottom: 15px; white-space: nowrap; }
 
-/* "NR simulations" label, gold, top left. */
-.rd-filter-nr {
-  position: absolute;
-  top: 30px;
-  left: 50px;
-  color: #c9a000;
-  font-size: 40px;
-  font-weight: bold;
-}
-
 /* Filter equation, below the title. */
 .rd-filter-eq {
   position: absolute;
