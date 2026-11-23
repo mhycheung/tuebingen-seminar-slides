@@ -142,6 +142,32 @@
       label(box, CL + i * dx, axY + 16, String(fr.t0), 32, [0.5, 0]);
     });
     label(box, (CL + CR) / 2, axY + 70, "$t_{\\rm start}\\ [M_{\\rm rem}]$", 40, [0.5, 0]);
+    // transparent strip over the circle list: pressing or dragging on it picks the column
+    var strip = el(svg, "rect", { x: CL - dx / 2, y: top - dy / 2, width: CR - CL + dx, height: rows.length * dy,
+                                  fill: "#fff", "fill-opacity": 0, "pointer-events": "all", cursor: "ew-resize" });
+    strip.style.touchAction = "none";
+    // play (triangle) and pause (two bars) buttons, centred below the list
+    var bx = (CL + CR) / 2, by = axY + 170, bs = 56;
+    function button(cx, shape) {
+      var g = el(svg, "g", { cursor: "pointer" });
+      el(g, "rect", { x: cx - bs / 2 - 8, y: by - bs / 2 - 8, width: bs + 16, height: bs + 16, fill: "#fff", "fill-opacity": 0 });
+      shape(g, cx);
+      return g;
+    }
+    var play = button(bx - 50, function (g, cx) {
+      el(g, "path", { d: "M" + (cx - bs * 0.4) + " " + (by - bs / 2) + "L" + (cx + bs * 0.5) + " " + by +
+                         "L" + (cx - bs * 0.4) + " " + (by + bs / 2) + "Z" });
+    });
+    var pause = button(bx + 50, function (g, cx) {
+      el(g, "rect", { x: cx - bs * 0.4, y: by - bs / 2, width: bs * 0.28, height: bs });
+      el(g, "rect", { x: cx + bs * 0.12, y: by - bs / 2, width: bs * 0.28, height: bs });
+    });
+    // column index under a pointer event (the deck is scaled, so convert to slide pixels)
+    function column(e) {
+      var rc = svg.getBoundingClientRect();
+      var x = (e.clientX - rc.left) * 1920 / rc.width;
+      return Math.max(0, Math.min(n - 1, Math.round((x - CL) / dx)));
+    }
 
     function show(k) {
       while (cont.firstChild) cont.removeChild(cont.firstChild);
@@ -161,24 +187,55 @@
         row.forEach(function (c, i) { c.setAttribute("stroke-width", i === k ? 3 : 0); });
       });
     }
-    return { show: show, n: n };
+    return { show: show, n: n, strip: strip, play: play, pause: pause, column: column };
   }
 
-  // Plays the start times at 2 per second and loops, holding the last one; a click pauses.
+  // Plays the start times at 2 per second and loops, holding the last one. The play and
+  // pause buttons start and stop it; dragging on the circle list moves through the frames.
   function anim(id, data) {
-    var A = null, timer = null, k = 0, paused = false;
+    var A = null, timer = null, k = 0, paused = false, dragging = false;
     function tick() {
-      if (paused) return;
+      if (paused || dragging) return;
       k = (k + 1) % (A.n + HOLD);
       if (k < A.n) A.show(k);
+    }
+    function setPaused(p) {
+      paused = p;
+      A.play.setAttribute("fill", p ? "#000" : "#bbb");
+      A.pause.setAttribute("fill", p ? "#bbb" : "#000");
+    }
+    function seek(e) {
+      var c = A.column(e);
+      if (c !== Math.min(k, A.n - 1)) A.show(c);
+      k = c;
+    }
+    function controls(slide) {
+      A.play.addEventListener("click", function () { setPaused(false); });
+      A.pause.addEventListener("click", function () { setPaused(true); });
+      var s = A.strip;
+      s.addEventListener("pointerdown", function (e) {
+        if (e.button !== 0) return;
+        dragging = true;
+        s.setPointerCapture(e.pointerId);
+        seek(e);
+      });
+      s.addEventListener("pointermove", function (e) { if (dragging) seek(e); });
+      function end(e) {
+        if (!dragging) return;
+        dragging = false;
+        if (s.hasPointerCapture(e.pointerId)) s.releasePointerCapture(e.pointerId);
+      }
+      s.addEventListener("pointerup", end);
+      s.addEventListener("pointercancel", end);
     }
     Deck.widget(id, {
       enter: function (slide) {
         if (!A) {
           A = setup(slide, data);
-          slide.addEventListener("click", function () { paused = !paused; });
+          controls(slide);
         }
-        k = 0; paused = false;
+        k = 0; dragging = false;
+        setPaused(false);
         A.show(0);
         timer = setInterval(tick, FRAME_MS);
       },
