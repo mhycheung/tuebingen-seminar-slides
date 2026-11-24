@@ -20,6 +20,16 @@
 }
 .rd-filter-q { position: absolute; font-size: 36px; white-space: nowrap; }
 
+/* QNM model, above the frequency panel, level with the t0 label. */
+.rd-filter-model {
+  position: absolute;
+  left: 1545px;
+  top: 165px;
+  transform: translate(-50%, -50%);
+  font-size: 48px;
+  white-space: nowrap;
+}
+
 /* Credits (R11), bottom right. */
 .rd-filter-cite { position: absolute; right: 60px; bottom: 15px; white-space: nowrap; }
 
