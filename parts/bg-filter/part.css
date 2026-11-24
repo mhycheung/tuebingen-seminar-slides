@@ -38,7 +38,7 @@
 .bg-filter-lufit {
   position: absolute;
   top: 130px;
-  left: 0;
+  left: 980px;
   right: 0;
   text-align: center;
 }
@@ -47,4 +47,12 @@
   display: block;
   height: 840px;
   margin: 0 auto;
+}
+
+/* Nature article header of Lu+, left of the GW250114 figure. */
+.bg-filter-nature {
+  position: absolute;
+  left: 60px;
+  top: 215px;
+  width: 900px;
 }
